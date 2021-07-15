@@ -3,6 +3,7 @@ package com.vaca.a15puzzel.view
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.MotionEvent.*
 import android.view.View
@@ -63,9 +64,9 @@ class PuzzleView : View {
     }
 
 
-    override fun onMeasure(width: Int, height: Int) {
-        setMeasuredDimension(canvasW, canvasH)
-    }
+//    override fun onMeasure(width: Int, height: Int) {
+//        setMeasuredDimension(canvasW, canvasH)
+//    }
 
 
 
@@ -77,9 +78,9 @@ class PuzzleView : View {
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         when (event?.action) {
             ACTION_DOWN -> {
-                x1 = event.x
-                y1 = event.y
-                gi = seeTime
+//                x1 = event.x
+//                y1 = event.y
+//                gi = seeTime
             }
 
             ACTION_UP -> {
@@ -87,7 +88,9 @@ class PuzzleView : View {
             }
 
             ACTION_MOVE -> {
-
+                x1 = event.x
+                y1 = event.y
+                Log.e("fuck","sdkljf        $x1          $y1         $width      $height")
             }
         }
         return super.onTouchEvent(event)
